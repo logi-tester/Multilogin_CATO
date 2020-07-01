@@ -9,7 +9,7 @@ ${SheetName}      Sheet1
 ${baseurl}        http://webtest.xerago.com/cvm/
 
 *** Test Cases ***
-To enter Valid username and Valid password
+ToenterValidusernameandValid password
     Jenkins browser launch
     Open Excel    ${CURDIR}/${excel_file_name}
     ${userName}=    Read Cell Data By Coordinates    ${SheetName}    0    1
@@ -19,21 +19,21 @@ To enter Valid username and Valid password
     Multilogin_repeated
     Log To Console    Admin login successfully
 
-To Enter valid username and Invalid password
+ToEntervalidusernameandInvalidpassword
     Jenkins browser launch
     Input Text    xpath=(.//*[@type='text'])[1]    admins
     Input Text    xpath=.//*[@type='password']    testdata
     Click Element    xpath=(.//*[@type='submit'])[1]
     Page Should Contain    Please enter a valid username/password
 
-To Enter Invalid username and valid password
+ToEnterInvalidusernameandvalidpassword
     Jenkins browser launch
     Input Text    xpath=(.//*[@type='text'])[1]    testdat
     Input Text    xpath=.//*[@type='password']    admins@123
     Click Element    xpath=(.//*[@type='submit'])[1]
     Page Should Contain    Please enter a valid username/password
 
-To Enter Invalid username and Invalid password
+ToEnterInvalidusernameandInvalidpassword
     Jenkins browser launch
     Input Text    xpath=(.//*[@type='text'])[1]    testdata
     Input Text    xpath=.//*[@type='password']    testdata
